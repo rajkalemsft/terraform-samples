@@ -15,7 +15,7 @@ resource "azurerm_key_vault" "eh-keyvault" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = "" #data.azurerm_client_config.current.object_id
+    object_id = var.user-principal #data.azurerm_client_config.current.object_id
 
     certificate_permissions = [
       "Create",
